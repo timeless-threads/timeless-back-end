@@ -30,7 +30,6 @@ def handler(event, context):
         if r.status_code // 100 != 2:
             print(r.status_code)
             print(r.text)
-            raise Exception("Error indexing document")
         count += 1
 
     return str(count) + ' records processed.'
