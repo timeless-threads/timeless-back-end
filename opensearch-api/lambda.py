@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         "query": {
             "multi_match": {
                 "query": event['queryStringParameters']['q'],
-                "fields": ["product_name.S"]
+                "fields": ["product_name.S", "brand.S"]
             }
         }
     }
