@@ -53,7 +53,6 @@ def get(event):
         KeyConditionExpression=boto3.dynamodb.conditions.Key('user_id').eq(user_id)
     )
 
-    # TODO - batch get items from items table
     returned_items = []
     for item in response['Items']:
         try:
@@ -66,7 +65,7 @@ def get(event):
             )
 
             # Get the first item from the response
-            # item.extend(items_table_response['Items'][0])
+            item.update(items_table_response['Items'][0])
 
             # Add the item details to the response
             returned_items.append(item)
