@@ -9,12 +9,10 @@ likes_table_name = 'revive_user_likes'
 item_table_name = 'used_clothing_database'
 dynamodb = boto3.resource('dynamodb')
 
-
 # Partition key: user_id (string)
 # Sort key: item_uuid (string)
 likes_table = dynamodb.Table(likes_table_name)
 items_table = dynamodb.Table(item_table_name)
-
 
 get_method = 'GET'
 post_method = 'POST'
@@ -37,7 +35,7 @@ def buildResponse(statusCode, body=None):
         'statusCode': statusCode,
         'headers': {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': '*', # Allow CORS
         }
     }
 
