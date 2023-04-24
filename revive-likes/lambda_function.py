@@ -47,8 +47,7 @@ def buildResponse(statusCode, body=None):
     return response
 
 def get(event):
-    body = json.loads(event['body'])
-    user_id = body['user_id']
+    user_id = event['queryStringParameters']['user_id']
     response = likes_table.query(
         KeyConditionExpression=boto3.dynamodb.conditions.Key('user_id').eq(user_id)
     )
