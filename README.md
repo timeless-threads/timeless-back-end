@@ -16,7 +16,8 @@ pip install --target ./package requests_aws4auth
 # Zip for deployment
 cd package
 zip -r ../lambda.zip .
-zip -g lambda.zip sample.py
+cd ..
+zip -gj lambda.zip sample.py
 ```
 
 ### opensearch-api
@@ -31,7 +32,8 @@ pip install --target ./package boto3
 # Zip for deployment
 cd package
 zip -r ../lambda.zip .
-zip -g lambda.zip lambda.py
+cd ..
+zip -gj lambda.zip lambda.py
 ```
 
 ### scraper-to-ddb
@@ -43,6 +45,8 @@ pip install --target ./package requests
 pip install --target ./package bs4
 
 # Zip for deployment
-zip -r lambda.zip package
+cd package
+zip -r lambda.zip .
+cd ..
 zip -gj lambda.zip scraper-to-ddb/lambda_function.py
 ```
