@@ -46,7 +46,7 @@ pip install --target ./package bs4
 
 # Zip for deployment
 cd package
-zip -r lambda.zip .
+zip -r ../lambda.zip .
 cd ..
 zip -gj lambda.zip scraper-to-ddb/lambda_function.py
 ```
